@@ -16,17 +16,10 @@ namespace Electronica.Win
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
             var prodcutosBL = new ProductosBL();
             var listadeProductos = prodcutosBL.ObtenerProductos();
 
-            foreach (var producto in listadeProductos)
-            {
-                MessageBox.Show(producto.Descripcion);
-            }
+            listadeProductosBindingSource.DataSource = listadeProductos;
         }
     }
 }
